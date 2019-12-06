@@ -22,8 +22,8 @@
 
 ### 3) 文档说明
 
->主程序说明 https://bms-doc.qujs.cn/bms.md
+>主程序说明 http://bms-doc.qujs.cn/bms
 
->postgresdriver插件说明 https://bms-doc.qujs.cn/postgresdriver.md
+>postgresdriver插件说明 http://bms-doc.qujs.cn/postgresdriver
 
->httpserver插件说明 https://bms-doc.qujs.cn/httpserver.md
+>httpserver插件说明 http://bms-doc.qujs.cn/httpserver
