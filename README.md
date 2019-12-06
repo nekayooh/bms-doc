@@ -22,6 +22,12 @@
 
 ### 3) 文档说明
 
+>[主程序说明](http://bms-doc.qujs.cn/bms)
+
+>[postgresdriver插件说明](http://bms-doc.qujs.cn/postgresdriver)
+
+>[httpserver插件说明](http://bms-doc.qujs.cn/httpserver)
+
 ><a href="http://bms-doc.qujs.cn/bms">主程序说明</a>
 
 ><a href="http://bms-doc.qujs.cn/postgresdriver">postgresdriver插件说明</a>
