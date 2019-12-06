@@ -50,7 +50,7 @@ query, _ := BMSClient.Msg(context.Background(), &proto.SendMsg{
 #### Query对象示例:
 ```
 {
-	"Name":"查询/执行Query名",
+    "Name":"查询/执行Query名",
     "Error":"失败时返回值",
     "Sentence":"select now()"
 }
