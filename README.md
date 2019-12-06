@@ -1,49 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>BMS主页</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/tailwindcss/1.1.2/tailwind.min.css"/>
-    <link rel="stylesheet" type="text/css"
-          href="https://cdn.staticfile.org/MaterialDesign-Webfont/4.4.95/css/materialdesignicons.min.css"/>
-</head>
-<body>
-<div class="flex flex-col w-screen h-screen">
-    <div class="flex-grow w-full flex flex-col justify-center items-center px-4 py-2">
-        <div class="text-6xl text-green-500 font-black">BMS</div>
-        <div class="text-sm text-green-500">B Management System</div>
-    </div>
-    <div class="flex flex-wrap w-full justify-center px-4 py-2">
-<!--        <div class="m-1 p-4 rounded hover:bg-gray-200 cursor-pointer flex items-center h-auto">-->
-<!--            <i class="mdi mdi-weather-sunny text-xl text-red-500"></i>-->
-<!--            <div class="ml-1 text-sm text-gray-600">稳定版（0.0.1）</div>-->
-<!--        </div>-->
-<!--        <div class="m-1 p-4 rounded hover:bg-gray-200 cursor-pointer flex items-center h-auto">-->
-<!--            <i class="mdi mdi-weather-night text-xl text-indigo-500"></i>-->
-<!--            <div class="ml-1 text-sm text-gray-600">每日版（0.0.1）</div>-->
-<!--        </div>-->
-    </div>
-    <div class="flex flex-wrap w-full justify-center px-4 py-2">
-        <div class="m-1 p-4 rounded hover:bg-gray-200 cursor-pointer flex flex-col items-center h-auto">
-            <i class="mdi mdi-file-document-box-check-outline text-2xl text-green-500"></i>
-            <div class="mt-1 text-sm text-gray-600">近期更新</div>
-        </div>
-        <div class="m-1 p-4 rounded hover:bg-gray-200 cursor-pointer flex flex-col items-center h-auto">
-            <i class="mdi mdi-file-document-box-plus-outline text-2xl text-orange-500"></i>
-            <div class="mt-1 text-sm text-gray-600">更新计划</div>
-        </div>
-        <div class="m-1 p-4 rounded hover:bg-gray-200 cursor-pointer flex flex-col items-center">
-            <i class="mdi mdi-file-document-box text-2xl text-blue-500"></i>
-            <div class="mt-1 text-sm text-gray-600">文档说明</div>
-        </div>
-<!--        <div class="m-1 p-4 rounded hover:bg-gray-200 cursor-pointer flex flex-col items-center" onclick="">-->
-<!--            <i class="mdi mdi-earth text-2xl text-purple-500"></i>-->
-<!--            <div class="mt-1 text-sm text-gray-600">在线联系</div>-->
-<!--        </div>-->
-    </div>
-    <div class="flex-grow w-full px-4 py-2 text-gray-600 flex justify-center items-end text-xs">Development by
-        nekayooh.
-    </div>
-</div>
-</body>
-</html>
+## BMS
+
+### 1) 近期更新
+
+|时间|版本号|更新说明|
+|:-:|:-:|:-|
+|2019-12-08|0.0.1-nightly|基于SheetJS完成批量导入导出功能|
+|2019-12-01|0.0.1-nightly|表格输入功能完成，下载组件添加|
+
+### 2) 更新计划
+
+|完成状态|计划说明|
+|:-:|:-|
+|已完成|表格动态循环生成相同类型的表头和数据，可进行排序、筛选|
+|已完成|表格加入信息框组件，图片预览组件|
+|已完成|表格加入输入框组件，下载组件|
+||图表框页面和信息框页面|
+||httpserver插件加载三方插件路由|
+||微服务自动加载插件|
+|已完成|分组表格、树形表格加入分组可编辑、树形可编辑|
+||基础信息定义|
+
+### 3) 文档说明
+
+>主程序说明 https://bms-doc.qujs.cn/bms.md
+
+>postgresdriver插件说明 https://bms-doc.qujs.cn/postgresdriver.md
+
+>httpserver插件说明 https://bms-doc.qujs.cn/httpserver.md
