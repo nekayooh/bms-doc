@@ -1,11 +1,11 @@
 
 ## postgresdriver
 ### 快捷导航
-[通用格式化说明](#通用格式化说明)<br>
-[通用权限验证说明](#通用权限验证说明)<br>
-[通用查询语句说明](#通用查询语句说明)<br>
-[通用表格字段说明](#通用表格字段说明)<br>
-[通用输入字段说明](#通用输入字段说明)<br>
+[* 通用格式化说明](#通用格式化说明)<br>
+[* 通用权限验证说明](#通用权限验证说明)<br>
+[* 通用查询语句说明](#通用查询语句说明)<br>
+[* 通用表格字段说明](#通用表格字段说明)<br>
+[* 通用输入字段说明](#通用输入字段说明)<br>
 [表格说明(table)](#表格说明)<br>
 [树形说明(tree)](#树形说明)<br>
 [树形表格说明(treetable)](#树形表格说明)<br>
@@ -74,15 +74,44 @@
     "Sentence":"select now()"
 }
 ```
-
 ##### 2、说明:
-
 |字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
 |Name|string|是|无|查询/执行Query名|
 |Error|string|否|默认返回值|查询/执行查询失败时返回值|
 |Sentence|string|是|无|1、begin：启动事务<br>2、commit：提交事务<br>3、rollback：回滚事务<br>4、查询sql语句/存储过程/函数：支持动态防注入替换，替换模板<% 传递调用参数(优先)/查询集合.0(为数字取对应下标的对象[array]).name(不为为数字取对应对象值[map])，例：<% query.0.name %>为取query集合下面的0号元素的name|
 #### <div id="通用表格字段说明">* 通用表格字段说明</div>
+##### 1、示例:
+```
+{
+    "name": "名称", //显示名称
+    "itype": "string", //格式化类型
+    "show": true, //默认是否显示
+    "select": true, //是否允许高级搜索
+    "data": "name" //绑定字段
+    "repeat": "" //自动重复渲染
+    "permission": "" //类型为input时生效，验证输入框是否能操作
+    "action": "" //类型为input时生效，监听字段改变，执行对应方法
+    "option":  [
+          {
+            "permission": "value.name.indexOf('测试')>-1",
+            "value": "bg-blue-500"
+          }
+    ] //类型为label时生效，根据不同判断，返回不同样式
+}
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|name|string|是|无|显示名称，可[通用格式化](#通用格式化说明)|
+|itype|string|是|无|格式化类型，index(不支持高级搜索)，int，string，float+小数点数量(非必须)，file，files，image，images，date，datetime，input，label|
+|show|bool|是|无|默认是否显示|
+|select|bool|是|无|是否允许高级搜索|
+|data|string|是|无|绑定字段|
+|repeat|string|否|无|自动重复渲染，如果有值，绑定default下面的查询语句(name对应名称，data对应字段，保存类型jsonb)|
+|permission|[通用权限验证](#通用权限验证说明)|否|无|类型为input时生效，验证输入框是否能操作|
+|action|uuid|否|无|类型为input时生效，监听字段改变，执行对应方法|
+|option|array|否|无|类型为label时生效，根据不同判断，返回不同样式(permission[通用权限验证](#通用权限验证说明)，value返回对应样式，默认底色为系统底色)|
 #### <div id="通用输入字段说明">* 通用输入字段说明</div>
 #### <div id="表格说明">表格说明(table)</div>
 #### <div id="树形说明">树形说明(tree)</div>
