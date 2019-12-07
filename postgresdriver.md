@@ -18,7 +18,7 @@
 
 ### 2) 配置说明
 
-|字段|类型|必须|默认值|说明|
+|字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
 |Version|string|是|无|插件版本|
 |Key|string|是|无|验证秘钥|
@@ -42,7 +42,7 @@ query, _ := BMSClient.Msg(context.Background(), &proto.SendMsg{
 
 ### 4) 传递JSON说明:
 
-|字段|类型|必须|默认值|说明|
+|字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
 |Data|map|是|无|传递调用参数|
 |Query|array|是|无|查询数据对象集合|
@@ -58,7 +58,7 @@ query, _ := BMSClient.Msg(context.Background(), &proto.SendMsg{
 
 #### Query对象说明:
 
-|字段|类型|必须|默认值|说明|
+|字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
 |Name|string|是|无|查询/执行Query名|
 |Error|string|否|默认返回值|查询/执行查询失败时返回值|
