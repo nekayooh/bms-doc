@@ -3,6 +3,7 @@
 ### 快捷导航
 [* 通用格式化说明](#通用格式化说明)<br>
 [* 通用权限验证说明](#通用权限验证说明)<br>
+[* 通用按钮说明](#通用按钮说明)<br>
 [* 通用查询语句说明](#通用查询语句说明)<br>
 [* 通用表格字段说明](#通用表格字段说明)<br>
 [* 通用输入字段说明](#通用输入字段说明)<br>
@@ -65,6 +66,25 @@
 格式化模板：<% 查询集合.0(为数字取对应下标的对象[array]).name(不为为数字取对应对象值[map])<br>例：<% query.0.name %>为取query集合下面的0号元素的name
 #### <div id="通用权限验证说明">* 通用权限验证说明</div>
 传入参数为当前页面param与所选参数的集合，后者覆盖前者，调用字段value(object)，采用javascript语句，返回bool
+#### <div id="通用按钮说明">* 通用查询语句说明</div>
+##### 1、示例:
+```
+{
+    "icon": "shape-square-plus text-red-400", //显示图标
+    "name": "多选删除", //显示名称
+    "modal": false, //是否弹窗打开
+    "template": "42c593e7-079e-41f0-8826-2211fbf1a06a", //绑定方法页面
+    "permission": "" //权限验证
+}
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|icon|string|是|无|显示图标|
+|name|string|是|无|显示名称|
+|modal|bool|是|无|是否弹窗打开|
+|template|uuid|是|无|绑定方法页面|
+|permission|string|否|无|[通用权限验证](#通用权限验证说明)|
 #### <div id="通用查询语句说明">* 通用查询语句说明</div>
 ##### 1、示例:
 ```
@@ -158,6 +178,45 @@
 |image|string|否|无|类型为richtext时生效，保存图片位置，为空|
 |resize|string|否|无|类型为image，images时生效，例：200x200(长x宽)|
 #### <div id="表格说明">表格说明(table)</div>
+##### 1、示例:
+```
+{
+    "default": [],
+    "prepare": [],
+    "query": [],
+    "head": [],
+    "menu": [
+      {
+        "icon": "shape-square-plus text-red-400",
+        "name": "删除",
+        "modal": false,
+        "template": "c2f53fca-c01a-4544-b267-67fb873b0b59",
+        "permission": ""
+      }
+    ],
+    "name": "表格框示例",
+    "itype": "table",
+    "param": [],
+    "button": [],
+    "multiple": [],
+    "refresh": true, //是否刷新上级页面
+    "config": { //默认基础配置
+      "page": "0", //默认页数
+      "sort": "id", //默认检索字段
+      "status": "down", //默认检索字段顺序
+      "count": "50" //默认页数
+    },
+    "placeholder": "名称", //搜索框显示默认文字
+    "export": true, //是否允许导出
+    "other": "共计 <% total.0.total %> 条数据" //底部显示额外信息
+  }
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|Name|string|是|无|查询/执行Query名|
+|Error|string|否|默认返回值|查询/执行查询失败时返回值|
+|Sentence|string|是|无|1、begin：启动事务<br>2、commit：提交事务<br>3、rollback：回滚事务<br>4、查询sql语句/存储过程/函数：支持动态防注入替换，替换模板<% 传递调用参数(优先)/查询集合.0(为数字取对应下标的对象[array]).name(不为为数字取对应对象值[map])，例：<% query.0.name %>为取query集合下面的0号元素的name|
 #### <div id="树形说明">树形说明(tree)</div>
 #### <div id="树形表格说明">树形表格说明(treetable)</div>
 #### <div id="分组表格说明">分组表格说明(grouptable)</div>
