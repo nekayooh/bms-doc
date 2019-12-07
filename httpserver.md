@@ -66,7 +66,7 @@
 格式化模板：<% 查询集合.0(为数字取对应下标的对象[array]).name(不为为数字取对应对象值[map])<br>例：<% query.0.name %>为取query集合下面的0号元素的name
 #### <div id="通用权限验证说明">* 通用权限验证说明</div>
 传入参数为当前页面param与所选参数的集合，后者覆盖前者，调用字段value(object)，采用javascript语句，返回bool
-#### <div id="通用按钮说明">* 通用查询语句说明</div>
+#### <div id="通用按钮说明">* 通用按钮说明</div>
 ##### 1、示例:
 ```
 {
@@ -181,24 +181,16 @@
 ##### 1、示例:
 ```
 {
-    "default": [],
-    "prepare": [],
-    "query": [],
-    "head": [],
-    "menu": [
-      {
-        "icon": "shape-square-plus text-red-400",
-        "name": "删除",
-        "modal": false,
-        "template": "c2f53fca-c01a-4544-b267-67fb873b0b59",
-        "permission": ""
-      }
-    ],
-    "name": "表格框示例",
-    "itype": "table",
-    "param": [],
-    "button": [],
-    "multiple": [],
+    "default": [], //基础语句集合
+    "prepare": [], //数据语句集合
+    "query": [], //查询语句集合
+    "head": [], //表头集合
+    "name": "表格框示例", //显示名称
+    "itype": "table", //模块类型
+    "param": [], //默认获取参数
+    "button": [], //顶部按钮集合
+    "menu": [], //右键菜单集合
+    "multiple": [], //多选右键菜单集合
     "refresh": true, //是否刷新上级页面
     "config": { //默认基础配置
       "page": "0", //默认页数
@@ -214,9 +206,23 @@
 ##### 2、说明:
 |字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
-|Name|string|是|无|查询/执行Query名|
-|Error|string|否|默认返回值|查询/执行查询失败时返回值|
-|Sentence|string|是|无|1、begin：启动事务<br>2、commit：提交事务<br>3、rollback：回滚事务<br>4、查询sql语句/存储过程/函数：支持动态防注入替换，替换模板<% 传递调用参数(优先)/查询集合.0(为数字取对应下标的对象[array]).name(不为为数字取对应对象值[map])，例：<% query.0.name %>为取query集合下面的0号元素的name|
+|default|array|否|无|基础语句集合，第一次执行返回所有数据，[通用查询语句](#通用查询语句说明)|
+|prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#通用查询语句说明)|
+|query|array|是|无|查询语句集合，每次执行返回名为query数据，[通用查询语句](#通用查询语句说明)|
+|name|string|是|无|显示名称，可[通用格式化](#通用格式化说明)|
+|itype|string|是|table|模块类型，不可修改|
+|param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
+|button|array|是|无|顶部按钮集合，[通用按钮](#通用按钮说明)|
+|menu|array|是|无|右键菜单集合，[通用按钮](#通用按钮说明)|
+|multiple|array|是|无|多选右键菜单集合，[通用按钮](#通用按钮说明)|
+|refresh|bool|是|无|是否刷新上级页面|
+|config.page|string|是|无|默认页数|
+|config.sort|string|是|无|默认检索字段|
+|config.status|string|是|无|默认检索字段顺序|
+|config.count|string|是|无|默认页数|
+|placeholder|string|是|无|搜索框显示默认文字|
+|export|bool|是|无|是否允许导出|
+|other|string|是|无|底部显示额外信息，[通用格式化](#通用格式化说明)数据，取prepare数据(name对应名称，data对应值|
 #### <div id="树形说明">树形说明(tree)</div>
 #### <div id="树形表格说明">树形表格说明(treetable)</div>
 #### <div id="分组表格说明">分组表格说明(grouptable)</div>
