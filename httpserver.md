@@ -201,6 +201,7 @@
     "placeholder": "名称", //搜索框显示默认文字
     "export": true, //是否允许导出
     "other": "共计 <% total.0.total %> 条数据" //底部显示额外信息
+    "action": "" //点击执行对应方法
   }
 ```
 ##### 2、说明:
@@ -222,10 +223,136 @@
 |config.count|string|是|无|默认页数|
 |placeholder|string|是|无|搜索框显示默认文字|
 |export|bool|是|无|是否允许导出|
-|other|string|是|无|底部显示额外信息，[通用格式化](#通用格式化说明)数据，取prepare数据(name对应名称，data对应值|
+|other|string|是|无|底部显示额外信息，[通用格式化](#通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
+|action|uuid|否|无|点击执行对应方法|
 #### <div id="树形说明">树形说明(tree)</div>
+##### 1、示例:
+```
+{
+    "query": [], //查询语句集合
+    "name": "树形框示例", //显示名称
+    "itype": "tree", //模块类型
+    "param": [], //默认获取参数
+    "menu": [], //右键菜单集合
+    "refresh": true, //是否刷新上级页面
+    "action": "" //点击执行对应方法
+  }
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|query|array|是|无|查询语句集合，每次执行返回名为query数据(uuid当前UUID，name显示名称，parent父级UUID)，[通用查询语句](#通用查询语句说明)|
+|name|string|是|无|显示名称，可[通用格式化](#通用格式化说明)|
+|itype|string|是|tree|模块类型，不可修改|
+|menu|array|是|无|右键菜单集合，[通用按钮](#通用按钮说明)|
+|refresh|bool|是|无|是否刷新上级页面|
+|action|uuid|否|无|点击执行对应方法|
 #### <div id="树形表格说明">树形表格说明(treetable)</div>
+##### 1、示例:
+```
+{
+    "default": [], //基础语句集合
+    "default_menu": [], //树形菜单集合
+    "default_refresh": true, //是否每次刷新基础语句
+    "prepare": [], //数据语句集合
+    "query": [], //查询语句集合
+    "head": [], //表头集合
+    "name": "树形表格示例", //显示名称
+    "itype": "treetable", //模块类型
+    "param": [], //默认获取参数
+    "button": [], //顶部按钮集合
+    "menu": [], //右键菜单集合
+    "multiple": [], //多选右键菜单集合
+    "refresh": true, //是否刷新上级页面
+    "config": { //默认基础配置
+      "page": "0", //默认页数
+      "sort": "id", //默认检索字段
+      "status": "down", //默认检索字段顺序
+      "count": "50" //默认页数
+    },
+    "placeholder": "名称", //搜索框显示默认文字
+    "export": true, //是否允许导出
+    "other": "共计 <% total.0.total %> 条数据" //底部显示额外信息
+    "action": "" //点击执行对应方法
+  }
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|default|array|否|无|基础语句集合，根据default_refresh执行返回所有数据，[通用查询语句](#通用查询语句说明)|
+|default_menu|array|是|无|树形菜单集合，[通用按钮](#通用按钮说明)|
+|default_refresh|bool|是|无|是否每次刷新基础语句|
+|prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#通用查询语句说明)|
+|query|array|是|无|查询语句集合，每次执行返回名为query数据，[通用查询语句](#通用查询语句说明)|
+|name|string|是|无|显示名称，可[通用格式化](#通用格式化说明)|
+|itype|string|是|treetable|模块类型，不可修改|
+|param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
+|button|array|是|无|顶部按钮集合，[通用按钮](#通用按钮说明)|
+|menu|array|是|无|右键菜单集合，[通用按钮](#通用按钮说明)|
+|multiple|array|是|无|多选右键菜单集合，[通用按钮](#通用按钮说明)|
+|refresh|bool|是|无|是否刷新上级页面|
+|config.page|string|是|无|默认页数|
+|config.sort|string|是|无|默认检索字段|
+|config.status|string|是|无|默认检索字段顺序|
+|config.count|string|是|无|默认页数|
+|placeholder|string|是|无|搜索框显示默认文字|
+|export|bool|是|无|是否允许导出|
+|other|string|是|无|底部显示额外信息，[通用格式化](#通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
+|action|uuid|否|无|点击执行对应方法|
 #### <div id="分组表格说明">分组表格说明(grouptable)</div>
+##### 1、示例:
+```
+{
+    "default": [], //基础语句集合
+    "default_button": [], //分组按钮集合
+    "default_menu": [], //分组菜单集合
+    "default_refresh": true, //是否每次刷新基础语句
+    "prepare": [], //数据语句集合
+    "query": [], //查询语句集合
+    "head": [], //表头集合
+    "name": "树形表格示例", //显示名称
+    "itype": "treetable", //模块类型
+    "param": [], //默认获取参数
+    "button": [], //顶部按钮集合
+    "menu": [], //右键菜单集合
+    "multiple": [], //多选右键菜单集合
+    "refresh": true, //是否刷新上级页面
+    "config": { //默认基础配置
+      "page": "0", //默认页数
+      "sort": "id", //默认检索字段
+      "status": "down", //默认检索字段顺序
+      "count": "50" //默认页数
+    },
+    "placeholder": "名称", //搜索框显示默认文字
+    "export": true, //是否允许导出
+    "other": "共计 <% total.0.total %> 条数据" //底部显示额外信息
+    "action": "" //点击执行对应方法
+  }
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|default|array|否|无|基础语句集合，根据default_refresh执行返回所有数据，[通用查询语句](#通用查询语句说明)|
+|default_button|array|是|无|分组按钮集合，[通用按钮](#通用按钮说明)|
+|default_menu|array|是|无|分组菜单集合，[通用按钮](#通用按钮说明)|
+|default_refresh|bool|是|无|是否每次刷新基础语句|
+|prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#通用查询语句说明)|
+|query|array|是|无|查询语句集合，每次执行返回名为query数据，[通用查询语句](#通用查询语句说明)|
+|name|string|是|无|显示名称，可[通用格式化](#通用格式化说明)|
+|itype|string|是|grouptable|模块类型，不可修改|
+|param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
+|button|array|是|无|顶部按钮集合，[通用按钮](#通用按钮说明)|
+|menu|array|是|无|右键菜单集合，[通用按钮](#通用按钮说明)|
+|multiple|array|是|无|多选右键菜单集合，[通用按钮](#通用按钮说明)|
+|refresh|bool|是|无|是否刷新上级页面|
+|config.page|string|是|无|默认页数|
+|config.sort|string|是|无|默认检索字段|
+|config.status|string|是|无|默认检索字段顺序|
+|config.count|string|是|无|默认页数|
+|placeholder|string|是|无|搜索框显示默认文字|
+|export|bool|是|无|是否允许导出|
+|other|string|是|无|底部显示额外信息，[通用格式化](#通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
+|action|uuid|否|无|点击执行对应方法|
 #### <div id="操作说明">操作说明(operate)</div>
 #### <div id="确认框说明">确认框说明(confirm)</div>
 #### <div id="信息说明">信息说明(info)</div>
