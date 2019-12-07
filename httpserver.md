@@ -45,7 +45,7 @@
 |GRPC|string|是|无|GRPC通信地址，当前地址或者远程地址，默认端口20001|
 |Port|int|否|无|运行绑定端口地址，为空则自动分配|
 |Thread|int|是|无|声明并发协程数量|
-|HttpPort|int|是|无|绑定运行端口||
+|HttpPort|int|是|无|绑定运行端口|
 |HttpTLS|bool|是|无|是否开启TLS|
 |HttpCert|string|是|无|TLS证书文件地址|
 |HttpKey|string|是|无|TLS密钥文件地址|
@@ -108,11 +108,55 @@
 |show|bool|是|无|默认是否显示|
 |select|bool|是|无|是否允许高级搜索|
 |data|string|是|无|绑定字段|
-|repeat|string|否|无|自动重复渲染，如果有值，绑定default下面的查询语句(name对应名称，data对应字段，保存类型jsonb)|
+|repeat|string|否|无|自动重复渲染，如果有值，[通用格式化](#通用格式化说明)数据，取default数据(name对应名称，data对应字段，保存类型jsonb)|
 |permission|[通用权限验证](#通用权限验证说明)|否|无|类型为input时生效，验证输入框是否能操作|
 |action|uuid|否|无|类型为input时生效，监听字段改变，执行对应方法|
 |option|array|否|无|类型为label时生效，根据不同判断，返回不同样式(permission[通用权限验证](#通用权限验证说明)，value返回对应样式，默认底色为系统底色)|
 #### <div id="通用输入字段说明">* 通用输入字段说明</div>
+##### 1、示例:
+```
+{
+    "name": "文字框示例", //显示名称
+    "disabled": false, //是否禁止编辑
+    "must": true, //是否必须有值（不为空）
+    "itype": "string", //格式化类型
+    "data": "string", //绑定字段
+    "value": "", //默认值
+    "fix": 2, //类型为float时生效，格式化小数点数量
+    "option": [
+          {
+            "name": "选项一",
+            "value": "1"
+          },
+          {
+            "name": "选项二",
+            "value": "2"
+          },
+          {
+            "name": "选项三",
+            "value": "3"
+          }
+    ], //类型为select时生效，选项名称和值
+    "option": "", //类型为select时生效，选项名称和值，绑定default里面数据
+    "rows": "", //类型为textarea时生效，文本域行数
+    "image": "", //类型为richtext时生效，保存图片位置，为空
+    "resize": "", //类型为image，images时生效，例：200x200(长x宽)
+}
+```
+##### 2、说明:
+|字段|类型|必须|示例值|说明|
+|:-:|:-:|:-:|:-:|:-|
+|name|string|是|无|显示名称，可[通用格式化](#通用格式化说明)|
+|disabled|bool|是|无|是否禁止编辑|
+|must|bool|是|无|是否必须有值（不为空）|
+|itype|string|是|无|格式化类型，int，string，float，file，files，image，images，date，datetime，richtext，textarea，select，bool|
+|data|string|是|无|绑定字段|
+|value|string|是|kind.0.name|[通用格式化](#通用格式化说明)数据，取prepare数据|
+|fix|int|否|无|类型为float时生效，格式化小数点数量|
+|option|array/string|否|无|类型为select时生效，选项名称和值，[通用格式化](#通用格式化说明)数据，取default数据(name对应名称，data对应值)|
+|rows|int|否|无|类型为textarea时生效，文本域行数|
+|image|string|否|无|类型为richtext时生效，保存图片位置，为空|
+|resize|string|否|无|类型为image，images时生效，例：200x200(长x宽)|
 #### <div id="表格说明">表格说明(table)</div>
 #### <div id="树形说明">树形说明(tree)</div>
 #### <div id="树形表格说明">树形表格说明(treetable)</div>
