@@ -234,6 +234,8 @@
 |export|bool|是|无|是否允许导出|
 |other|string|是|无|底部显示额外信息，[通用格式化](#-通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
 |action|uuid|否|无|点击执行对应方法|
+|loading|bool|否|无|是否自动定时加载|
+|loading_space|int|否|无|加载间隔，<=0或不存在则不显示自动自动加载按钮|
 
 ##### 3、替换说明:
 
@@ -326,6 +328,8 @@
 |export|bool|是|无|是否允许导出|
 |other|string|是|无|底部显示额外信息，[通用格式化](#-通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
 |action|uuid|否|无|点击执行对应方法|
+|loading|bool|否|无|是否自动定时加载|
+|loading_space|int|否|无|加载间隔，<=0或不存在则不显示自动自动加载按钮|
 
 ##### 3、替换说明:
 
@@ -334,6 +338,7 @@
 |<% uuid %>|替换格式化传入参数uuid，多个参数格式化为"'uuid1','uuid2',..."，单个参数格式化为"'uuid1'"|
 |<% repeat %>|获取重复字段语句，select后使用|
 |<% select %>|格式化查询语句，where后使用|
+|<% param.tree %>|默认传入树形的选择uuid|
 
 #### 分组表格说明
 ##### 1、示例:
@@ -390,6 +395,8 @@
 |export|bool|是|无|是否允许导出|
 |other|string|是|无|底部显示额外信息，[通用格式化](#-通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
 |action|uuid|否|无|点击执行对应方法|
+|loading|bool|否|无|是否自动定时加载|
+|loading_space|int|否|无|加载间隔，<=0或不存在则不显示自动自动加载按钮|
 
 ##### 3、替换说明:
 
@@ -398,6 +405,7 @@
 |<% uuid %>|替换格式化传入参数uuid，多个参数格式化为"'uuid1','uuid2',..."，单个参数格式化为"'uuid1'"|
 |<% repeat %>|获取重复字段语句，select后使用|
 |<% select %>|格式化查询语句，where后使用|
+|<% param.group %>|默认传入分组的选择uuid|
 
 #### 操作说明
 ##### 1、示例:
