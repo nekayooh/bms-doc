@@ -235,7 +235,7 @@
 |other|string|是|无|底部显示额外信息，[通用格式化](#-通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
 |action|uuid|否|无|点击执行对应方法|
 |loading|bool|否|无|是否自动定时加载|
-|loading_space|int|否|无|加载间隔，<=0或不存在则不显示自动自动加载按钮|
+|loading_space|int|否|无|加载间隔(s)，<=0或不存在则不显示自动自动加载按钮|
 
 ##### 3、替换说明:
 
@@ -329,7 +329,7 @@
 |other|string|是|无|底部显示额外信息，[通用格式化](#-通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
 |action|uuid|否|无|点击执行对应方法|
 |loading|bool|否|无|是否自动定时加载|
-|loading_space|int|否|无|加载间隔，<=0或不存在则不显示自动自动加载按钮|
+|loading_space|int|否|无|加载间隔(s)，<=0或不存在则不显示自动自动加载按钮|
 
 ##### 3、替换说明:
 
@@ -396,7 +396,7 @@
 |other|string|是|无|底部显示额外信息，[通用格式化](#-通用格式化说明)数据，取prepare数据(name对应名称，data对应值）|
 |action|uuid|否|无|点击执行对应方法|
 |loading|bool|否|无|是否自动定时加载|
-|loading_space|int|否|无|加载间隔，<=0或不存在则不显示自动自动加载按钮|
+|loading_space|int|否|无|加载间隔(s)，<=0或不存在则不显示自动自动加载按钮|
 
 ##### 3、替换说明:
 
