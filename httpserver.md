@@ -112,16 +112,18 @@
     "itype": "string", //格式化类型
     "show": true, //默认是否显示
     "select": true, //是否允许高级搜索
-    "data": "name" //绑定字段
-    "repeat": "" //自动重复渲染
-    "permission": "" //类型为input时生效，验证输入框是否能操作
-    "action": "" //类型为input时生效，监听字段改变，执行对应方法
+    "data": "name", //绑定字段
+    "repeat": "", //自动重复渲染
+    "permission": "", //类型为input时生效，验证输入框是否能操作
+    "action": "", //类型为input时生效，监听字段改变，执行对应方法
     "option":  [
           {
             "permission": "value.name.indexOf('测试')>-1",
             "value": "bg-blue-500"
           }
-    ] //类型为label时生效，根据不同判断，返回不同样式
+    ]， //类型为label时生效，根据不同判断，返回不同样式
+    "icon": "", //仅为信息区域时生效，显示material-design-icons图标
+    "value": "" //仅为信息区域时生效，绑定信息值
 }
 ```
 ##### 2、说明:
@@ -137,6 +139,8 @@
 |permission|[通用权限验证](#-通用权限验证说明)|否|无|类型为input时生效，验证输入框是否能操作|
 |action|uuid|否|无|类型为input时生效，监听字段改变，执行对应方法|
 |option|array|否|无|类型为label时生效，根据不同判断，返回不同样式(permission[通用权限验证](#-通用权限验证说明)，value返回对应样式，默认底色为系统底色)|
+|icon|string|否|无|仅为信息区域时生效，显示material-design-icons图标|
+|value|string|否|无|仅为信息区域时生效，绑定信息值|
 
 #### * 通用输入字段说明
 ##### 1、示例:
@@ -221,6 +225,7 @@
 |default|array|否|无|基础语句集合，第一次执行返回所有数据，[通用查询语句](#-通用查询语句说明)|
 |prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#-通用查询语句说明)|
 |query|array|是|无|查询语句集合，每次执行返回名为query数据，[通用查询语句](#-通用查询语句说明)|
+|head|string|是|无|显示表头，[通用表格字段说明](#-通用表格字段说明)|
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |itype|string|是|table|模块类型，不可修改|
 |param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
@@ -317,6 +322,7 @@
 |default_refresh|bool|是|无|是否每次刷新基础语句|
 |prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#-通用查询语句说明)|
 |query|array|是|无|查询语句集合，每次执行返回名为query数据，[通用查询语句](#-通用查询语句说明)|
+|head|string|是|无|显示表头，[通用表格字段说明](#-通用表格字段说明)|
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |itype|string|是|treetable|模块类型，不可修改|
 |param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
@@ -386,6 +392,7 @@
 |default_refresh|bool|是|无|是否每次刷新基础语句|
 |prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#-通用查询语句说明)|
 |query|array|是|无|查询语句集合，每次执行返回名为query数据，[通用查询语句](#-通用查询语句说明)|
+|head|string|是|无|显示表头，[通用表格字段说明](#-通用表格字段说明)|
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |itype|string|是|grouptable|模块类型，不可修改|
 |param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
@@ -496,6 +503,7 @@
     "name": "信息示例", //显示名称
     "itype": "info", //模块类型
     "param": [], //默认获取参数
+    "head": [], //表头集合
     "loading": false, //是否自动定时加载
     "loading_space": 39 //加载间隔(s)
   }
@@ -506,6 +514,7 @@
 |:-:|:-:|:-:|:-:|:-|
 |default|array|否|无|基础语句集合，第一次执行返回所有数据，[通用查询语句](#-通用查询语句说明)|
 |prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#-通用查询语句说明)|
+|head|string|是|无|显示表头，[通用表格字段说明](#-通用表格字段说明)|
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |itype|string|是|info|模块类型，不可修改|
 |param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
