@@ -532,10 +532,9 @@
 ##### 1、示例:
 ```
 {
-    "default": [], //基础语句集合
     "prepare": [], //数据语句集合
     "name": "信息示例", //显示名称
-    "itype": "info", //模块类型
+    "itype": "chart", //模块类型
     "param": [], //默认获取参数
     "javascript": "", //获取数据后成功后运行JS
     "loading": false, //是否自动定时加载
@@ -546,10 +545,9 @@
 
 |字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
-|default|array|否|无|基础语句集合，第一次执行返回所有数据，[通用查询语句](#-通用查询语句说明)|
 |prepare|array|是|无|数据语句集合，每次执行返回所有数据，返回名为total为总查询数量，[通用查询语句](#-通用查询语句说明)|
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
-|itype|string|是|info|模块类型，不可修改|
+|itype|string|是|chart|模块类型，不可修改|
 |param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
 |javascript|string|是|无|获取数据后成功后运行JS|
 |loading|bool|否|无|是否自动定时加载|
