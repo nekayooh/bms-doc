@@ -536,7 +536,9 @@
     "name": "信息示例", //显示名称
     "itype": "chart", //模块类型
     "param": [], //默认获取参数
-    "javascript": "", //获取数据后成功后运行JS
+    "height": "", //表格高度
+    "javascript": "(()=>{...})(value)", //获取数据后成功后运行JS
+    "fullscreen": false, //是否默认全屏
     "loading": false, //是否自动定时加载
     "loading_space": 39 //加载间隔(s)
   }
@@ -549,7 +551,9 @@
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |itype|string|是|chart|模块类型，不可修改|
 |param|array|是|无|默认获取参数，{name(原数据字段名):xxx,data(新数据字段名):xxx}，sql调用方式：<% param.新字段名 %>|
-|javascript|string|是|无|获取数据后成功后运行JS|
+|height|string|是|无|表格高度|
+|javascript|string|是|无|获取数据后成功后运行JS，返回echart object对象，默认传入参数字段value|
+|fullscreen|bool|是|无|是否默认全屏|
 |loading|bool|否|无|是否自动定时加载|
 |loading_space|int|否|无|加载间隔(s)，<=0或不存在则不显示自动自动加载按钮|
 
