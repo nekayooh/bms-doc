@@ -167,7 +167,6 @@
           }
     ], //类型为select时生效，选项名称和值
     "option": "", //类型为select时生效，选项名称和值，绑定default里面数据
-    "rows": "", //类型为textarea时生效，文本域行数
     "image": "", //类型为richtext时生效，保存图片位置，为空
     "resize": "", //类型为image，images时生效，例：200x200(长x宽)
 }
@@ -183,7 +182,6 @@
 |data|string|是|无|绑定字段|
 |value|string|是|kind.0.name|[通用格式化](#-通用格式化说明)数据，取prepare数据|
 |option|array/string|否|无|类型为select时生效，选项名称和值，[通用格式化](#-通用格式化说明)数据，取default数据(name对应名称，data对应值)|
-|rows|int|否|无|类型为textarea时生效，文本域行数|
 |image|string|否|无|类型为richtext时生效，保存图片位置，为空|
 |resize|string|否|无|类型为image，images时生效，例：200x200(长x宽)|
 
