@@ -152,7 +152,6 @@
     "itype": "string", //格式化类型
     "data": "string", //绑定字段
     "value": "", //默认值
-    "fix": 2, //类型为float时生效，格式化小数点数量
     "option": [
           {
             "name": "选项一",
@@ -183,7 +182,6 @@
 |itype|string|是|无|格式化类型，int，string，float，file，files，image，images，date，datetime，richtext，textarea，select，bool|
 |data|string|是|无|绑定字段|
 |value|string|是|kind.0.name|[通用格式化](#-通用格式化说明)数据，取prepare数据|
-|fix|int|否|无|类型为float时生效，格式化小数点数量|
 |option|array/string|否|无|类型为select时生效，选项名称和值，[通用格式化](#-通用格式化说明)数据，取default数据(name对应名称，data对应值)|
 |rows|int|否|无|类型为textarea时生效，文本域行数|
 |image|string|否|无|类型为richtext时生效，保存图片位置，为空|
