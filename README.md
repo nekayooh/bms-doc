@@ -1,4 +1,4 @@
-![avatar](http://bms.qujs.cn/logo.png)
+![avatar](http://yeams.qujs.cn/logo.png)
 
 ### 1) 近期更新
 
