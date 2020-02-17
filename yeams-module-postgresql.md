@@ -1,5 +1,5 @@
 
-## postgresdriver
+## yeams-module-postgresql
 
 ### 1) 示例配置（config.json）
 
