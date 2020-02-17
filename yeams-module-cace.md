@@ -430,7 +430,9 @@
     "uuid": 1, //生成id数量
     "back": false, //是否完成时返回
     "refresh": true, //是否刷新上级页面
-    "import": true //是否允许批量导入
+    "import": true, //是否允许批量导入
+    "module": "", //调用自定义模块
+    "action": "" //调用自定义模块方法
   }
 ```
 ##### 2、说明:
@@ -447,6 +449,8 @@
 |back|bool|是|无|是否完成时返回|
 |refresh|bool|是|无|是否刷新上级页面|
 |import|bool|是|无|是否允许批量导入|
+|module|string|否|无|调用自定义模块名称，为空则不调用|
+|action|string|否|无|调用自定义模块方法名称|
 
 ##### 3、替换说明:
 
@@ -468,7 +472,9 @@
     "param": [], //默认获取参数
     "uuid": 1, //生成id数量
     "back": false, //是否完成时返回
-    "refresh": true //是否刷新上级页面
+    "refresh": true, //是否刷新上级页面
+    "module": "", //调用自定义模块
+    "action": "" //调用自定义模块方法
   }
 ```
 ##### 2、说明:
@@ -483,6 +489,8 @@
 |uuid|bool|是|无|生成id数量，调用方式<% uuid.第几个 %>|
 |back|bool|是|无|是否完成时返回|
 |refresh|bool|是|无|是否刷新上级页面|
+|module|string|否|无|调用自定义模块名称，为空则不调用|
+|action|string|否|无|调用自定义模块方法名称|
 
 ##### 3、替换说明:
 
