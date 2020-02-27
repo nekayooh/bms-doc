@@ -109,6 +109,7 @@
 ```
 {
     "name": "名称", //显示名称
+    "style": {}, //表格自定义样式，允许为空
     "itype": "string", //格式化类型
     "show": true, //默认是否显示
     "select": true, //是否允许高级搜索
@@ -131,7 +132,8 @@
 |字段|类型|必须|示例值|说明|
 |:-:|:-:|:-:|:-:|:-|
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
-|itype|string|是|无|格式化类型，index(不支持高级搜索)，int，string，float+小数点数量(非必须)，file，files，image，images，date，datetime，input，label|
+|style|object|否|{}|表格自定义样式，允许为空|
+|itype|string|是|无|格式化类型，index(不支持高级搜索)，int，string，float+小数点数量(非必须)，file，files，image，images，date，datetime，input，label，textarea，input-textarea|
 |show|bool|是|无|默认是否显示|
 |select|bool|是|无|是否允许高级搜索|
 |data|string|是|无|绑定字段|
@@ -178,7 +180,7 @@
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |disabled|bool|是|无|是否禁止编辑|
 |must|bool|是|无|是否必须有值（不为空）|
-|itype|string|是|无|格式化类型，int，string，float，file，files，image，images，date，datetime，richtext，textarea，select，bool|
+|itype|string|是|无|格式化类型，int，string，float，file，files，image，images，date，datetime，richtext，textarea，select，bool，color|
 |data|string|是|无|绑定字段|
 |value|string|是|kind.0.name|[通用格式化](#-通用格式化说明)数据，取prepare数据|
 |option|array/string|否|无|类型为select时生效，选项名称和值，[通用格式化](#-通用格式化说明)数据，取default数据(name对应名称，data对应值)|
