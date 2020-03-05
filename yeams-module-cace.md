@@ -180,7 +180,7 @@
 |name|string|是|无|显示名称，可[通用格式化](#-通用格式化说明)|
 |disabled|bool|是|无|是否禁止编辑|
 |must|bool|是|无|是否必须有值（不为空）|
-|itype|string|是|无|格式化类型，int，string，float，file，files，image，images，date，datetime，richtext，textarea，select，bool，color|
+|itype|string|是|无|格式化类型，int，string，float，file，files，image，images，date，datetime，richtext，textarea，select，bool，color，map|
 |data|string|是|无|绑定字段|
 |value|string|是|kind.0.name|[通用格式化](#-通用格式化说明)数据，取prepare数据|
 |option|array/string|否|无|类型为select时生效，选项名称和值，[通用格式化](#-通用格式化说明)数据，取default数据(name对应名称，data对应值)|
